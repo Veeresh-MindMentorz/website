@@ -1,0 +1,108 @@
+.pricing-page {
+  padding-bottom: 80px;
+  background: #FAFAFA;
+}
+
+.pricing-hero {
+  background: linear-gradient(135deg, #642B8F 0%, #4B1A6E 100%);
+  padding: 120px 20px 100px;
+  color: #FFFFFF;
+  margin-bottom: -60px;
+}
+.pricing-hero .section-tag { background: #FFFFFF; color: var(--primary); font-weight: 700; margin-bottom: 16px; border: none; }
+.pricing-hero .section-title { color: #FFFFFF !important; font-size: 2.8rem; margin-bottom: 16px; }
+.pricing-gold { color: #F8A213; }
+.pricing-subtitle { color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 600px; margin: 0 auto 40px; }
+
+.pricing-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.1);
+  padding: 6px;
+  border-radius: 100px;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+.pricing-tab {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+.pricing-tab.active {
+  background: #FFFFFF;
+  color: var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.pricing-tab-content {
+  animation: fadeIn 0.4s ease;
+}
+
+.pricing-section-title { font-size: 2rem; font-family: var(--font-display); font-weight: 800; color: #FFFFFF; }
+.pricing-section-desc { color: rgba(255,255,255,0.85); }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.pricing-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 8px 24px rgba(100,43,143,0.06);
+  border: 1px solid rgba(100,43,143,0.1);
+  display: flex; flex-direction: column;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.pricing-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(100,43,143,0.12); }
+.pricing-card.popular { border-color: #F8A213; box-shadow: 0 12px 32px rgba(248,162,19,0.12); z-index: 2; transform: scale(1.02); }
+.pricing-card.popular:hover { transform: scale(1.02) translateY(-4px); }
+.pricing-card.premium { border-color: #642B8F; }
+
+.popular-badge {
+  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, #F8A213, #E88300);
+  color: #FFF; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
+  padding: 6px 16px; border-radius: 100px; letter-spacing: 1px;
+}
+
+.pricing-duration { color: var(--primary); font-weight: 800; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.pricing-pack-name { font-size: 1.6rem; font-family: var(--font-display); font-weight: 800; color: var(--text-primary); margin-bottom: 12px; }
+.pricing-price { font-size: 2.4rem; font-weight: 800; color: var(--text-primary); display: flex; align-items: baseline; gap: 8px; margin-bottom: 8px; }
+.pricing-rate { font-size: 1rem; color: var(--text-muted); font-weight: 600; }
+.pricing-ideal { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+
+.pricing-highlight { display: inline-block; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; background: rgba(248,162,19,0.1); color: #E88300; }
+.pricing-highlight.premium { background: rgba(100,43,143,0.1); color: var(--primary); }
+.pricing-includes { font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+
+.pricing-premium-label { font-size: 0.85rem; font-weight: 800; color: var(--gold-dark); margin: 16px 0 10px; }
+
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; flex: 1; }
+.pricing-features li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.4; display: flex; gap: 8px; align-items: flex-start; }
+
+.pricing-btn { width: 100%; text-align: center; margin-bottom: 16px; display: block; }
+.pricing-footnote { text-align: center; font-size: 0.75rem; color: var(--text-muted); font-style: italic; }
+
+.mt-large { margin-top: 80px; }
+.mb-8 { margin-bottom: 32px; }
+.mb-6 { margin-bottom: 24px; }
+.p-4 { padding: 24px; }
+
+@media (max-width: 1024px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .pricing-card.popular { transform: none; }
+  .pricing-card.popular:hover { transform: translateY(-4px); }
+  .pricing-hero .section-title { font-size: 2.2rem; }
+}
