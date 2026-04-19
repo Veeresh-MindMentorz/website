@@ -83,14 +83,14 @@
 .pricing-rate { font-size: 1rem; color: var(--text-muted); font-weight: 600; }
 .pricing-ideal { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; padding-bottom: 20px; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
 
-.pricing-highlight { display: inline-block; padding: 6px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; background: rgba(248,162,19,0.1); color: #E88300; }
-.pricing-highlight.premium { background: rgba(100,43,143,0.1); color: var(--primary); }
+.pricing-highlight { display: flex; align-items: center; padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; margin-bottom: 16px; border-left: 3px solid; }
+.pricing-highlight.premium { border-left-color: var(--primary); background: rgba(100,43,143,0.08) !important; color: var(--primary) !important; }
 .pricing-includes { font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
 
 .pricing-premium-label { font-size: 0.85rem; font-weight: 800; color: var(--gold-dark); margin: 16px 0 10px; }
 
-.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; flex: 1; }
-.pricing-features li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.4; display: flex; gap: 8px; align-items: flex-start; }
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; flex: 1; }
+.pricing-features li { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.45; display: flex; gap: 9px; align-items: flex-start; }
 
 .pricing-btn { width: 100%; text-align: center; margin-bottom: 16px; display: block; }
 .pricing-footnote { text-align: center; font-size: 0.75rem; color: var(--text-muted); font-style: italic; }

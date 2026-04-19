@@ -1,4 +1,4 @@
-﻿.journey-section {
+.journey-section {
   background: linear-gradient(135deg, #642B8F 0%, #642B8F 100%);
   overflow: hidden;
   padding-bottom: 56px;
@@ -37,7 +37,7 @@
 .step-glow { position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 100px; height: 100px; border-radius: 50%; filter: blur(40px); opacity: 0.25; transition: opacity 0.3s ease; }
 .journey-step:hover .step-glow { opacity: 0.45; }
 .step-num { font-size: 3.2rem; font-weight: 900; font-family: var(--font-display); opacity: 0.15; line-height: 1; margin-bottom: 6px; color: #FFFFFF; }
-.step-icon { font-size: 2.4rem; margin-bottom: 14px; }
+.step-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
 .step-title { font-size: 1.05rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 8px; color: #FFFFFF; }
 .step-desc { font-size: 0.88rem; color: rgba(255,255,255,0.7) !important; }
 

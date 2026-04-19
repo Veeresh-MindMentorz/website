@@ -19,6 +19,7 @@ import RefundPolicy from './components/RefundPolicy'
 import TermsOfService from './components/TermsOfService'
 import Pricing from './components/Pricing'
 import Locations from './components/Locations'
+import AboutUs from './components/AboutUs'
 
 function AppContent() {
   return (
@@ -72,6 +73,7 @@ function App() {
         <Route path="/pricing" element={<LegalPage><Pricing /></LegalPage>} />
         <Route path="/locations" element={<LegalPage><Locations /></LegalPage>} />
         <Route path="/blogs" element={<LegalPage><Blog /></LegalPage>} />
+        <Route path="/about" element={<LegalPage><AboutUs /></LegalPage>} />
         <Route path="/privacy-policy" element={<LegalPage><PrivacyPolicy /></LegalPage>} />
         <Route path="/terms-of-service" element={<LegalPage><TermsOfService /></LegalPage>} />
         <Route path="/refund-policy" element={<LegalPage><RefundPolicy /></LegalPage>} />

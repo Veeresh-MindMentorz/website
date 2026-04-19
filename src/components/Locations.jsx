@@ -1,4 +1,13 @@
 import './Locations.css'
+import { MapPin, Phone } from 'lucide-react'
+
+function DetailIcon({ icon: Icon, bg, color }) {
+  return (
+    <div className="detail-icon" style={{ background: bg, color, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <Icon size={18} strokeWidth={2} />
+    </div>
+  )
+}
 
 export default function Locations() {
   return (
@@ -7,7 +16,7 @@ export default function Locations() {
         <div className="section-tag">Visit Us</div>
         <h1 className="section-title" style={{ color: '#FFFFFF' }}>Our Academy <span className="locations-gold">Locations.</span></h1>
         <p className="locations-subtitle">
-          We offer in-person classes at our two centers in Bangalore. Find the one nearest you!
+          Visit us in person at one of our academy centers. Find the one nearest you!
         </p>
       </div>
 
@@ -22,17 +31,15 @@ export default function Locations() {
             
             <div className="location-details">
               <div className="detail-row">
-                <div className="detail-icon">📍</div>
+                <DetailIcon icon={MapPin} bg="#EDE9F8" color="#642b8f" />
                 <div>
                   <strong>Address:</strong>
                   <p>1st Floor, No. 54, Sect 2, Hennur Bagalur Main Rd, Kothanur, Byrathi Bande (Krishnanagara), Bengaluru, Karnataka 560077</p>
                 </div>
               </div>
 
-
-
               <div className="detail-row">
-                <div className="detail-icon">📞</div>
+                <DetailIcon icon={Phone} bg="#EDE9F8" color="#642b8f" />
                 <div>
                   <strong>Phone:</strong>
                   <p>+91 86185 68046</p>
@@ -54,17 +61,15 @@ export default function Locations() {
 
             <div className="location-details">
               <div className="detail-row">
-                <div className="detail-icon" style={{ background: '#FFF5EB', color: '#F8A213' }}>📍</div>
+                <DetailIcon icon={MapPin} bg="#FFF5EB" color="#F8A213" />
                 <div>
                   <strong>Address:</strong>
                   <p>Thindlu Main Road Virupakshapura, opposite Vidya Spoorthi School, Kodigehalli, Vidyaranyapura, Bengaluru, Karnataka 560097</p>
                 </div>
               </div>
 
-
-
               <div className="detail-row">
-                <div className="detail-icon" style={{ background: '#FFF5EB', color: '#F8A213' }}>📞</div>
+                <DetailIcon icon={Phone} bg="#FFF5EB" color="#F8A213" />
                 <div>
                   <strong>Phone:</strong>
                   <p>+91 91129 11236</p>
@@ -86,17 +91,15 @@ export default function Locations() {
 
             <div className="location-details">
               <div className="detail-row">
-                <div className="detail-icon" style={{ background: '#E6F4F1', color: '#0D9488' }}>📍</div>
+                <DetailIcon icon={MapPin} bg="#E6F4F1" color="#0D9488" />
                 <div>
                   <strong>Address:</strong>
                   <p>Office No 147, 1st Floor, Vision one mall, Wakad, Pune, Pimpri-Chinchwad, Maharashtra 411033</p>
                 </div>
               </div>
 
-
-
               <div className="detail-row">
-                <div className="detail-icon" style={{ background: '#E6F4F1', color: '#0D9488' }}>📞</div>
+                <DetailIcon icon={Phone} bg="#E6F4F1" color="#0D9488" />
                 <div>
                   <strong>Phone:</strong>
                   <p>+91 8530086204</p>

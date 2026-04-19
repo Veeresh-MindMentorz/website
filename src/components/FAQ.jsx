@@ -1,5 +1,6 @@
 import './FAQ.css'
 import { useState } from 'react'
+import { HelpCircle, ChevronDown, ChevronUp } from 'lucide-react'
 
 const faqs = [
   {
@@ -35,7 +36,10 @@ export default function FAQ() {
     <section className="section faq-section" id="faq">
       <div className="container">
         <div className="text-center">
-          <div className="section-tag">❓ Common Questions</div>
+          <div className="section-tag">
+            <HelpCircle size={13} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 5 }} />
+            Common Questions
+          </div>
           <h2 className="section-title">Frequently Asked Questions</h2>
           <div className="divider divider-center" />
         </div>
@@ -48,7 +52,12 @@ export default function FAQ() {
               onClick={() => setOpen(open === i ? null : i)}
             >
               <div className="faq-question">
-                <span className="faq-icon">{open === i ? '−' : '+'}</span>
+                <span className="faq-icon">
+                  {open === i
+                    ? <ChevronUp size={18} strokeWidth={2.5} style={{ color: 'var(--primary)' }} />
+                    : <ChevronDown size={18} strokeWidth={2.5} style={{ color: 'var(--primary)' }} />
+                  }
+                </span>
                 <h4>{f.q}</h4>
               </div>
               {open === i && (

@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import newLogo from '../newLogo.png'
 
 const navLinks = [
-  { label: 'About', href: '#why-us' },
+  { label: 'About Us', href: '/about', isPage: true },
   { label: 'Program', href: '#program' },
   { label: 'Coaches', href: '#coaches' },
   { label: 'Pricing', href: '/pricing', isPage: true },

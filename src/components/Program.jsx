@@ -1,5 +1,17 @@
 import './Program.css'
-import { useState, useRef } from 'react'
+import { useState } from 'react'
+import {
+  CalendarDays,
+  BookOpen,
+  Puzzle,
+  Award,
+  Trophy,
+  BarChart2,
+  Clock,
+  Target,
+  CheckCircle2,
+  BookMarked,
+} from 'lucide-react'
 
 const levels = [
   {
@@ -140,13 +152,13 @@ const levels = [
 ]
 
 const features = [
-  { icon: '📅', text: '24–60 Sessions per Level' },
-  { icon: '📚', text: '150+ ChessKid Assignments' },
-  { icon: '🧩', text: '50,000+ Curated Puzzles from Database' },
-  { icon: '🏅', text: 'Monthly Leaderboards' },
-  { icon: '🏆', text: 'Monthly Tournaments (Online & Offline)' },
-  { icon: '📊', text: 'Assessment Reports' },
-  { icon: '🌙', text: '24/7 Platform Access' },
+  { Icon: CalendarDays, text: '24–60 Sessions per Level' },
+  { Icon: BookOpen, text: '150+ ChessKid Assignments' },
+  { Icon: Puzzle, text: '50,000+ Curated Puzzles from Database' },
+  { Icon: Award, text: 'Monthly Leaderboards' },
+  { Icon: Trophy, text: 'Monthly Tournaments (Online & Offline)' },
+  { Icon: BarChart2, text: 'Assessment Reports' },
+  { Icon: Clock, text: '24/7 Platform Access' },
 ]
 
 export default function Program() {
@@ -169,7 +181,10 @@ export default function Program() {
 
         {/* Header */}
         <div className="text-center">
-          <div className="section-tag">📚 Structured Curriculum</div>
+          <div className="section-tag">
+            <BookMarked size={13} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 5 }} />
+            Structured Curriculum
+          </div>
           <h2 className="section-title">A Clear Path from Beginner<br />to Tournament Player</h2>
           <div className="divider divider-center" />
           <p className="section-subtitle program-sub" style={{ margin: '0 auto 48px' }}>
@@ -208,10 +223,16 @@ export default function Program() {
               <div className="level-badge" style={{ color: lvl.color, borderColor: lvl.color + '55', background: lvl.color + '18' }}>
                 {lvl.level}
               </div>
-              <div className="level-sessions-chip">🕐 {lvl.sessions}</div>
+              <div className="level-sessions-chip">
+                <Clock size={14} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} />
+                {lvl.sessions}
+              </div>
             </div>
             <div className="level-outcome-box" style={{ borderColor: lvl.color + '55', background: lvl.color + '12' }}>
-              <div className="outcome-label">🎯 Outcome</div>
+              <div className="outcome-label">
+                <Target size={13} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 4 }} />
+                Outcome
+              </div>
               <div className="outcome-text">{lvl.outcome}</div>
             </div>
             <a href="#journey" className="btn-primary level-enroll-btn">
@@ -266,11 +287,16 @@ export default function Program() {
 
         {/* Program Features */}
         <div className="program-features">
-          <h3 className="program-feat-title">🎯 Program Features — All Levels</h3>
+          <h3 className="program-feat-title">
+            <CheckCircle2 size={18} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 8, color: '#F8A213' }} />
+            Program Features — All Levels
+          </h3>
           <div className="features-grid">
             {features.map(f => (
               <div key={f.text} className="feature-chip glass-card">
-                <span className="feature-chip-icon">{f.icon}</span>
+                <span className="feature-chip-icon">
+                  <f.Icon size={18} strokeWidth={1.75} />
+                </span>
                 <span>{f.text}</span>
               </div>
             ))}
@@ -288,4 +314,3 @@ export default function Program() {
     </section>
   )
 }
-

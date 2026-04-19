@@ -1,6 +1,7 @@
 import './Footer.css'
 import { Link } from 'react-router-dom'
 import newLogo from '../newLogo.png'
+import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react'
 
 const InstagramIcon = () => (
   <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
@@ -85,7 +86,7 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Company</h4>
             <ul>
-              <li><a href="/#why-us">About Us</a></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/pricing">Pricing</Link></li>
               <li><Link to="/locations">Locations</Link></li>
               <li><Link to="/blogs">Blog</Link></li>
@@ -96,20 +97,38 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="footer-links">
-            <h4>Contact</h4>
-            <ul>
-              <li>📧 info@mindmentorz.com</li>
-              <li>📞 +91 99999 99999</li>
-              <li>📍 India &amp; Online</li>
-              <li>
+          <div className="footer-links" style={{ flex: 1.2 }}>
+            <h4>Contact Us</h4>
+            <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: '1.5' }}>
+                <MapPin size={16} strokeWidth={2.5} style={{ color: 'var(--gold)', flexShrink: 0, marginTop: '2px' }} />
+                <span>
+                  <strong style={{ display: 'block', color: '#fff', marginBottom: '2px' }}>Corporate Office</strong>
+                  1st Floor, No. 54, Sect 2, Hennur Bagalur Main Rd, Kothanur
+                </span>
+              </li>
+              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: '1.5' }}>
+                <Mail size={16} strokeWidth={2.5} style={{ color: 'var(--gold)', flexShrink: 0, marginTop: '2px' }} />
+                <span>
+                  <strong style={{ display: 'block', color: '#fff', marginBottom: '2px' }}>Email Us</strong>
+                  <a href="mailto:info@mindmentorz.com" style={{ color: 'inherit', textDecoration: 'none' }}>info@mindmentorz.com</a>
+                </span>
+              </li>
+              <li style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', lineHeight: '1.5' }}>
+                <Phone size={16} strokeWidth={2.5} style={{ color: 'var(--gold)', flexShrink: 0, marginTop: '2px' }} />
+                <span>
+                  <strong style={{ display: 'block', color: '#fff', marginBottom: '2px' }}>Call Us</strong>
+                  +91 86185 68046
+                </span>
+              </li>
+              <li style={{ marginTop: '4px' }}>
                 <a
-                  href="https://wa.me/919999999999"
+                  href="https://wa.me/918618568046"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-whatsapp"
                 >
-                  💬 WhatsApp Us
+                  <MessageCircle size={15} strokeWidth={2.5} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6 }} /> WhatsApp Us
                 </a>
               </li>
             </ul>
@@ -117,7 +136,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Mind Mentorz. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MindMentorz. All rights reserved.</p>
           <div className="footer-bottom-links">
             <Link to="/privacy-policy">Privacy Policy</Link>
             <Link to="/terms-of-service">Terms of Service</Link>

@@ -1,4 +1,5 @@
 import './CTA.css'
+import { Rocket, CheckCircle2, ArrowRight, Zap } from 'lucide-react'
 
 export default function CTA() {
   return (
@@ -14,28 +15,39 @@ export default function CTA() {
             <span className="cta-piece cta-piece-2">♛</span>
             <span className="cta-piece cta-piece-3">♝</span>
           </div>
-          <div className="section-tag" style={{ justifyContent: 'center', display: 'inline-flex' }}>🚀 Final Step</div>
+          <div className="section-tag" style={{ justifyContent: 'center', display: 'inline-flex' }}>
+            <Rocket size={13} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 5 }} />
+            Final Step
+          </div>
           <h2 className="section-title">Ready to Build Your Child's<br />Chess Future?</h2>
           <p className="cta-subtitle">
             Give your child the advantage of structured learning, expert coaching, and real competitive success.
           </p>
 
           <div className="cta-benefits">
-            <span>✅ FIDE-Rated Coaches</span>
-            <span>✅ Structured Curriculum</span>
-            <span>✅ Free Assessment</span>
-            <span>✅ No Commitment</span>
+            {['FIDE-Rated Coaches', 'Structured Curriculum', 'Free Assessment', 'No Commitment'].map((b) => (
+              <span key={b} style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+                <CheckCircle2 size={15} strokeWidth={2.5} style={{ color: '#009B77', flexShrink: 0 }} />
+                {b}
+              </span>
+            ))}
           </div>
 
           <a
-            href="https://wa.me/919999999999?text=Hi!%20I%20want%20to%20book%20a%20free%20trial%20chess%20class"
+            href="https://skuare.mindmentorz.com/parent-login"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary cta-btn"
           >
-            <span>👉 Book a Free Trial Class Today</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+              <ArrowRight size={16} strokeWidth={2.5} />
+              Book a Free Trial Class Today
+            </span>
           </a>
-          <p className="cta-note">⚡ Limited seats available. Start now.</p>
+          <p className="cta-note" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6 }}>
+            <Zap size={14} strokeWidth={2} style={{ color: '#F8A213', flexShrink: 0 }} />
+            Limited seats available. Start now.
+          </p>
         </div>
       </div>
     </section>

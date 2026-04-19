@@ -51,9 +51,9 @@
 .level-piece-big { font-size: 4.9rem; line-height: 1; animation: float 3.5s ease-in-out infinite; }
 .level-meta { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 100%; }
 .level-badge { display: inline-block; border: 1px solid; border-radius: 100px; padding: 5px 18px; font-size: 0.76rem; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; }
-.level-sessions-chip { background: var(--primary-xlight); border: 1px solid rgba(100,43,143,0.2); border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; font-weight: 600; color: var(--primary); }
+.level-sessions-chip { display: flex; align-items: center; gap: 4px; justify-content: center; background: var(--primary-xlight); border: 1px solid rgba(100,43,143,0.2); border-radius: 100px; padding: 6px 16px; font-size: 0.8rem; font-weight: 600; color: var(--primary); }
 .level-outcome-box { width: 100%; border: 1px solid; border-radius: 14px; padding: 14px; text-align: left; }
-.outcome-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 7px; }
+.outcome-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 7px; display: flex; align-items: center; gap: 4px; }
 .outcome-text { font-size: 0.87rem; font-weight: 600; color: var(--text-primary); line-height: 1.5; }
 .level-enroll-btn { width: 100%; justify-content: center; font-size: 0.9rem; padding: 12px 18px; }
 
@@ -84,7 +84,7 @@
 .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .feature-chip { display: flex; align-items: center; gap: 12px; padding: 16px 18px; font-size: 0.86rem; color: rgba(255,255,255,0.85); border-radius: var(--radius-md) !important; background: rgba(255,255,255,0.1) !important; border: 1px solid rgba(255,255,255,0.15) !important; box-shadow: none !important; }
 .feature-chip:hover { background: rgba(255,255,255,0.18) !important; transform: translateY(-2px); color: #fff; }
-.feature-chip-icon { font-size: 1.3rem; flex-shrink: 0; }
+.feature-chip-icon { display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #F0BA6F; width: 32px; height: 32px; background: rgba(240,186,111,0.15); border-radius: 8px; }
 
 .feature-chip:nth-child(odd) { animation: fadeInUp 0.48s ease both; }
 .feature-chip:nth-child(even) { animation: fadeInUp 0.58s ease both; }

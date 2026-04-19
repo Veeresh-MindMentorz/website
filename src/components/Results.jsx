@@ -1,12 +1,16 @@
 import './Results.css'
 import { useRef } from 'react'
+import { Trophy, TrendingUp, Crown, Medal, Target, ArrowRight } from 'lucide-react'
 
 const students = [
-  { photo: '/student-aarav.jpg',  name: 'Aarav',  age: 10, achievement: '0 → 1450 Rapid Rating in 12 Months', sub: '🏆 3 Tournament Wins', color: '#7C3AED', months: 12, before: 0,   after: 1450 },
-  { photo: '/student-diya.jpg',   name: 'Diya',   age: 9,  achievement: 'Beginner → District-Level Winner',   sub: '📈 Rapid improvement in 8 months',        color: '#F8A213', months: 8,  before: 400, after: 1100 },
-  { photo: '/student-rohan.jpg',  name: 'Rohan',  age: 12, achievement: '900 → 1600 Strength',               sub: '♟ Qualified for state-level tournaments', color: '#9D60FA', months: 10, before: 900, after: 1600 },
-  { photo: '/student-ananya.jpg', name: 'Ananya', age: 11, achievement: '500 → 1200 in 9 Months',            sub: '🥇 Zone-level tournament winner',          color: '#E5B700', months: 9,  before: 500, after: 1200 },
-  { photo: '/student-karan.jpg',  name: 'Karan',  age: 13, achievement: '1000 → 1700 FIDE Prep Track',      sub: '🎯 National qualifier',                   color: '#6D28D9', months: 14, before: 1000,after: 1700 },
+  { photo: '/student-yashas.jpg',   name: 'Yashas Ram Tetali',  age: 10, achievement: '0 → 1450 Rapid Rating in 12 Months', sub: '3 Tournament Wins',             SubIcon: Trophy,    color: '#7C3AED', months: 12, before: 0,    after: 1450 },
+  { photo: '/student-vrishank.jpg', name: 'Vrishank Reddy',     age: 9,  achievement: 'Beginner → District-Level Winner',   sub: 'Rapid improvement in 8 months', SubIcon: TrendingUp, color: '#F8A213', months: 8,  before: 400,  after: 1100 },
+  { photo: '/student-sathvik.jpg',  name: 'Sathvik Sharath',    age: 12, achievement: '900 → 1600 Strength',               sub: 'State-level tournaments',      SubIcon: Crown,     color: '#9D60FA', months: 10, before: 900,  after: 1600 },
+  { photo: '/student-riddhi.jpg',   name: 'Riddhi Gupta',       age: 11, achievement: '500 → 1200 in 9 Months',            sub: 'Zone-level tournament winner',  SubIcon: Medal,     color: '#E5B700', months: 9,  before: 500,  after: 1200 },
+  { photo: '/student-prishita.jpg', name: 'Prishita Choudhary', age: 13, achievement: '1000 → 1700 FIDE Prep Track',      sub: 'National qualifier',            SubIcon: Target,    color: '#6D28D9', months: 14, before: 1000, after: 1700 },
+  { photo: '/student-manjoyee.jpg', name: 'Manjoyee Roy',       age: 10, achievement: '0 → 1200 Rating in 10 Months',    sub: '2 Tournament Wins',             SubIcon: Trophy,    color: '#7C3AED', months: 10, before: 0,    after: 1200 },
+  { photo: '/student-ariv.jpg',     name: 'FM Ariv Debmisra',   age: 14, achievement: '1200 → 2000 Strength',            sub: 'State-level champion',          SubIcon: Medal,     color: '#B084FF', months: 18, before: 1200, after: 2000 },
+  { photo: '/student-anay.jpg',     name: 'Anay Banka',         age: 11, achievement: '600 → 1400 in 12 Months',         sub: 'Rapid improvement in 12 months',SubIcon: TrendingUp, color: '#F8A213', months: 12, before: 600,  after: 1400 },
 ]
 
 export default function Results() {
@@ -22,7 +26,10 @@ export default function Results() {
     <section className="section results-section" id="results">
       <div className="container relative">
         <div className="text-center">
-          <div className="section-tag">🏆 Student Results</div>
+          <div className="section-tag">
+            <Trophy size={13} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 5, color: '#F8A213' }} />
+            Student Results
+          </div>
           <h2 className="section-title">Real Students. <span className="results-gold-accent">Real Ratings.</span><br />Real Results.</h2>
           <div className="divider divider-center" />
           <p className="section-subtitle" style={{ margin: '0 auto 40px' }}>
@@ -65,7 +72,10 @@ export default function Results() {
                     </div>
                   </div>
                   <h4 className="result-achievement">{s.achievement}</h4>
-                  <p className="result-sub">{s.sub}</p>
+                  <p className="result-sub" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+                    <s.SubIcon size={14} strokeWidth={2} style={{ color: s.color, flexShrink: 0 }} />
+                    {s.sub}
+                  </p>
                 </div>
               ))}
             </div>
@@ -73,7 +83,10 @@ export default function Results() {
         </div>
 
         <div className="results-cta text-center">
-          <p>👉 <strong>Consistent training + the right system = predictable progress</strong></p>
+          <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
+            <ArrowRight size={16} strokeWidth={2.5} style={{ color: '#F8A213', flexShrink: 0 }} />
+            <strong>Consistent training + the right system = predictable progress</strong>
+          </p>
         </div>
       </div>
     </section>

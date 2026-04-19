@@ -33,7 +33,7 @@ export default function Hero() {
           </p>
 
           <div className="hero-cta">
-            <a href="#journey" className="btn-primary hero-primary-btn">
+            <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary hero-primary-btn">
               <span>Book a Free Trial Class</span>
             </a>
             <a href="#program" className="btn-outline hero-outline-btn">

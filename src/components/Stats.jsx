@@ -1,11 +1,12 @@
-﻿import './Stats.css'
+import './Stats.css'
 import { useEffect, useRef, useState } from 'react'
+import { BookOpen, GraduationCap, Trophy, Globe } from 'lucide-react'
 
 const stats = [
-  { icon: '📚', value: 10000, suffix: '+', label: 'Classes Delivered' },
-  { icon: '🎓', value: 2500, suffix: '+', label: 'Students Trained' },
-  { icon: '🏆', value: 200, suffix: '+', label: 'Tournaments Conducted' },
-  { icon: '🌍', value: 10, suffix: '+', label: 'Countries Reached' },
+  { Icon: BookOpen, value: 10000, suffix: '+', label: 'Classes Delivered' },
+  { Icon: GraduationCap, value: 2500, suffix: '+', label: 'Students Trained' },
+  { Icon: Trophy, value: 200, suffix: '+', label: 'Tournaments Conducted' },
+  { Icon: Globe, value: 10, suffix: '+', label: 'Countries Reached' },
 ]
 
 function CountUp({ target, suffix, active }) {
@@ -48,7 +49,10 @@ export default function Stats() {
     <section className="stats-section" id="impact" ref={ref}>
       <div className="container">
         <div className="stats-head text-center">
-          <div className="section-tag stats-tag">📊 Our Impact</div>
+          <div className="section-tag stats-tag">
+            <Trophy size={14} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 5 }} />
+            Our Impact
+          </div>
           <h2 className="stats-title">Measured Progress. <span className="stats-gold">Real Outcomes.</span></h2>
           <p className="stats-subtitle">Families trust Mind Mentorz because results are visible, structured, and consistent.</p>
         </div>
@@ -57,7 +61,9 @@ export default function Stats() {
           {stats.map((s, i) => (
             <div className="stat-card glass-card" key={s.label} style={{ animationDelay: `${i * 0.12}s` }}>
               <div className="stat-ring">
-                <div className="stat-icon">{s.icon}</div>
+                <div className="stat-icon">
+                  <s.Icon size={28} strokeWidth={1.75} />
+                </div>
               </div>
               <div className="stat-value">
                 <CountUp target={s.value} suffix={s.suffix} active={visible} />

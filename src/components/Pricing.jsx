@@ -1,5 +1,33 @@
 import './Pricing.css'
 import { useState } from 'react'
+import {
+  CheckCircle2, BookOpen, Crown, GraduationCap, FileText,
+  Zap, Star, Trophy, Tag, ChevronRight,
+} from 'lucide-react'
+
+/* Reusable feature list item */
+function FeatItem({ children }) {
+  return (
+    <li style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+      <CheckCircle2
+        size={16}
+        strokeWidth={2.5}
+        style={{ color: '#009B77', flexShrink: 0, marginTop: 2 }}
+      />
+      <span>{children}</span>
+    </li>
+  )
+}
+
+/* Highlight badge */
+function HighlightBadge({ color, icon: Icon, children }) {
+  return (
+    <div className="pricing-highlight" style={{ borderLeftColor: color, background: color + '12' }}>
+      <Icon size={15} strokeWidth={2} style={{ color, flexShrink: 0, marginRight: 6 }} />
+      {children}
+    </div>
+  )
+}
 
 export default function Pricing() {
   const [activeTab, setActiveTab] = useState('online')
@@ -45,11 +73,23 @@ export default function Pricing() {
                 <div className="pricing-price">₹3,072</div>
                 <p className="pricing-ideal">Perfect for getting started and learning the fundamentals.</p>
                 <ul className="pricing-features">
-                  <li>✅ 8 Live Coaching Sessions</li>
-                  <li>📘 Structured Beginner Curriculum</li>
-                  <li>♟️ ChessKid Basic Account (Limited Access)</li>
-                  <li>🎓 Certificate of Level Completion*</li>
-                  <li>📝 Feedback Report (If Applicable)</li>
+                  <FeatItem>8 Live Coaching Sessions</FeatItem>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+                    <BookOpen size={16} strokeWidth={2} style={{ color: '#3B5BDB', flexShrink: 0, marginTop: 2 }} />
+                    <span>Structured Beginner Curriculum</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+                    <Crown size={16} strokeWidth={2} style={{ color: '#642b8f', flexShrink: 0, marginTop: 2 }} />
+                    <span>ChessKid Basic Account (Limited Access)</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+                    <GraduationCap size={16} strokeWidth={2} style={{ color: '#F8A213', flexShrink: 0, marginTop: 2 }} />
+                    <span>Certificate of Level Completion*</span>
+                  </li>
+                  <li style={{ display: 'flex', alignItems: 'flex-start', gap: 9 }}>
+                    <FileText size={16} strokeWidth={2} style={{ color: '#0C8599', flexShrink: 0, marginTop: 2 }} />
+                    <span>Feedback Report (If Applicable)</span>
+                  </li>
                 </ul>
                 <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn"><span>Get Started</span></a>
                 <div className="pricing-footnote">*Only For New Enrollments</div>
@@ -63,16 +103,18 @@ export default function Pricing() {
                 <div className="pricing-price">₹5,440</div>
                 <p className="pricing-ideal">Ideal for building skills and gaining momentum.</p>
                 
-                <div className="pricing-highlight">🟠 16 Classes – Growth Track (Momentum Builder)</div>
+                <HighlightBadge color="#F8A213" icon={Zap}>
+                  16 Classes – Growth Track (Momentum Builder)
+                </HighlightBadge>
                 <p className="pricing-includes">Everything in 8 classes PLUS:</p>
                 
                 <ul className="pricing-features">
-                  <li>✅ 1 Free Monthly Masterclass with AGM Praveen Sagar</li>
-                  <li>✅ 1 Personalized Game Analysis + Written Report</li>
-                  <li>✅ 20-Minute 1:1 Feedback Call</li>
-                  <li>✅ 1 Free Tournament Entry</li>
-                  <li>✅ Certificate of Course Completion*</li>
-                  <li>✅ Feedback Report</li>
+                  <FeatItem>1 Free Monthly Masterclass with AGM Praveen Sagar</FeatItem>
+                  <FeatItem>1 Personalized Game Analysis + Written Report</FeatItem>
+                  <FeatItem>20-Minute 1:1 Feedback Call</FeatItem>
+                  <FeatItem>1 Free Tournament Entry</FeatItem>
+                  <FeatItem>Certificate of Course Completion*</FeatItem>
+                  <FeatItem>Feedback Report</FeatItem>
                 </ul>
                 <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn"><span>Get Started</span></a>
                 <div className="pricing-footnote">*Only For New Enrollments</div>
@@ -87,17 +129,22 @@ export default function Pricing() {
                 </div>
                 <p className="pricing-ideal">Best value for long-term growth and mastery.</p>
                 
-                <div className="pricing-highlight premium">🔴 48 Classes – Elite Long-Term Track</div>
+                <HighlightBadge color="#E03131" icon={Star}>
+                  48 Classes – Elite Long-Term Track
+                </HighlightBadge>
                 <p className="pricing-includes">Everything in 16 PLUS:</p>
                 
-                <div className="pricing-premium-label">🏆 Premium Additions</div>
+                <div className="pricing-premium-label">
+                  <Trophy size={15} strokeWidth={2} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6, color: '#F8A213' }} />
+                  Premium Additions
+                </div>
                 <ul className="pricing-features">
-                  <li>✅ 2 Free Tournament Entries</li>
-                  <li>✅ 3 Personalized Game Analysis Reports (spread across program)</li>
-                  <li>✅ 2 Strategy Calls with AGM Praveen Sagar (30 mins each)</li>
-                  <li>✅ Custom 6-Month Improvement Roadmap</li>
-                  <li>✅ FIDE Rating Pathway Consultation (if eligible)</li>
-                  <li>✅ Certificate of Completion + Performance Report</li>
+                  <FeatItem>2 Free Tournament Entries</FeatItem>
+                  <FeatItem>3 Personalized Game Analysis Reports (spread across program)</FeatItem>
+                  <FeatItem>2 Strategy Calls with AGM Praveen Sagar (30 mins each)</FeatItem>
+                  <FeatItem>Custom 6-Month Improvement Roadmap</FeatItem>
+                  <FeatItem>FIDE Rating Pathway Consultation (if eligible)</FeatItem>
+                  <FeatItem>Certificate of Completion + Performance Report</FeatItem>
                 </ul>
                 <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn"><span>Get Started</span></a>
                 <div className="pricing-footnote">*Only For New Enrollments</div>
@@ -145,26 +192,24 @@ export default function Pricing() {
           </div>
         )}
 
-        {/* FAQ Section extracted from Pricing request */}
+        {/* FAQ Section */}
         <div className="pricing-faq mt-large">
           <h2 className="text-center mb-6" style={{fontFamily:'var(--font-display)', fontWeight:800}}>Pricing Questions, Answered</h2>
           <div className="faq-grid" style={{maxWidth:'800px', margin:'0 auto', display:'flex', flexDirection:'column', gap:'20px'}}>
-            <div className="faq-card glass-card p-4">
-              <h4 style={{marginBottom:'8px', color:'var(--primary)'}}>Are there any hidden registration or material fees?</h4>
-              <p style={{fontSize:'0.9rem', color:'var(--text-secondary)', lineHeight:1.6}}>No. Our pricing is all-inclusive. The package fee covers all classes, online portal access, and practice materials for your child's program. There are no surprise charges.</p>
-            </div>
-            <div className="faq-card glass-card p-4">
-              <h4 style={{marginBottom:'8px', color:'var(--primary)'}}>What is the validity of the class packages?</h4>
-              <p style={{fontSize:'0.9rem', color:'var(--text-secondary)', lineHeight:1.6}}>The 8-class package is valid for 1 month, the 16-class package is valid for 2 months, and the 48-class package is valid for 6 months. This structure helps maintain consistent progress for the students.</p>
-            </div>
-            <div className="faq-card glass-card p-4">
-              <h4 style={{marginBottom:'8px', color:'var(--primary)'}}>What is your policy for missed classes?</h4>
-              <p style={{fontSize:'0.9rem', color:'var(--text-secondary)', lineHeight:1.6}}>We understand that life happens! We offer the flexibility to attend catch-up classes on different days to ensure you get the full value of your package within its validity period. Please speak to your center manager to schedule a catch-up class.</p>
-            </div>
-            <div className="faq-card glass-card p-4">
-              <h4 style={{marginBottom:'8px', color:'var(--primary)'}}>Do you offer sibling discounts?</h4>
-              <p style={{fontSize:'0.9rem', color:'var(--text-secondary)', lineHeight:1.6}}>Yes, we do! We offer a 10% discount for the second child.</p>
-            </div>
+            {[
+              { q: 'Are there any hidden registration or material fees?', a: 'No. Our pricing is all-inclusive. The package fee covers all classes, online portal access, and practice materials for your child\'s program. There are no surprise charges.' },
+              { q: 'What is the validity of the class packages?', a: 'The 8-class package is valid for 1 month, the 16-class package is valid for 2 months, and the 48-class package is valid for 6 months. This structure helps maintain consistent progress for the students.' },
+              { q: 'What is your policy for missed classes?', a: 'We understand that life happens! We offer the flexibility to attend catch-up classes on different days to ensure you get the full value of your package within its validity period. Please speak to your center manager to schedule a catch-up class.' },
+              { q: 'Do you offer sibling discounts?', a: 'Yes, we do! We offer a 10% discount for the second child.' },
+            ].map((faq, i) => (
+              <div key={i} className="faq-card glass-card p-4">
+                <h4 style={{marginBottom:'8px', color:'var(--primary)', display:'flex', alignItems:'center', gap:8}}>
+                  <ChevronRight size={16} strokeWidth={2.5} style={{ color: '#F8A213', flexShrink: 0 }} />
+                  {faq.q}
+                </h4>
+                <p style={{fontSize:'0.9rem', color:'var(--text-secondary)', lineHeight:1.6}}>{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
