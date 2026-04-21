@@ -51,6 +51,7 @@ export default function Navbar() {
         <Link to="/" className="navbar-logo">
           <div className="logo-wrapper">
             <img src={newLogo} alt="Mind Mentorz" className="logo-image" />
+            <span className="logo-tagline">Chess  Academy</span>
             <span className="logo-since">✦ Since 2017</span>
           </div>
         </Link>

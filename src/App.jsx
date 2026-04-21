@@ -21,6 +21,21 @@ import Pricing from './components/Pricing'
 import Locations from './components/Locations'
 import AboutUs from './components/AboutUs'
 
+function FloatingTrialButton() {
+  return (
+    <a
+      href="https://skuare.mindmentorz.com/parent-login"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-float"
+      aria-label="Book Free Trial"
+    >
+      <span className="wa-icon">💬</span>
+      <span className="wa-label">Book Free Trial</span>
+    </a>
+  )
+}
+
 function AppContent() {
   return (
     <div className="app">
@@ -38,18 +53,6 @@ function AppContent() {
         <CTA />
       </main>
       <Footer />
-
-      {/* Floating WhatsApp Button */}
-      <a
-        href="https://skuare.mindmentorz.com/parent-login"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float"
-        aria-label="Book Free Trial"
-      >
-        <span className="wa-icon">💬</span>
-        <span className="wa-label">Book Free Trial</span>
-      </a>
     </div>
   )
 }
@@ -78,6 +81,7 @@ function App() {
         <Route path="/terms-of-service" element={<LegalPage><TermsOfService /></LegalPage>} />
         <Route path="/refund-policy" element={<LegalPage><RefundPolicy /></LegalPage>} />
       </Routes>
+      <FloatingTrialButton />
     </Router>
   )
 }

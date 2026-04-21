@@ -235,7 +235,7 @@ export default function Program() {
               </div>
               <div className="outcome-text">{lvl.outcome}</div>
             </div>
-            <a href="#journey" className="btn-primary level-enroll-btn">
+            <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary level-enroll-btn">
               <span>Enroll Now →</span>
             </a>
           </div>
@@ -306,7 +306,7 @@ export default function Program() {
         {/* Bottom CTA */}
         <div className="program-bottom-cta">
           <p className="program-cta-text">Start Your Child's Chess Journey Today</p>
-          <a href="#journey" className="btn-primary">
+          <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary">
             <span>Enroll Now →</span>
           </a>
         </div>

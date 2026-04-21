@@ -28,6 +28,26 @@
   gap: 2px;
 }
 .logo-image { height: 48px; width: auto; max-width: 200px; object-fit: contain; }
+.logo-tagline {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: #F1DEC2;
+  line-height: 1.25;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.24);
+}
+.logo-tagline::before,
+.logo-tagline::after {
+  content: '';
+  width: 12px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(248,162,19,0), rgba(248,162,19,0.85), rgba(248,162,19,0));
+}
 .logo-since {
   font-size: 0.6rem;
   font-weight: 700;
@@ -77,9 +97,38 @@
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 @media (max-width: 860px) {
+  .navbar {
+    padding: 10px 0;
+  }
+  .navbar.scrolled {
+    padding: 9px 0;
+  }
   .hamburger { display: flex; }
+  .logo-image {
+    height: 44px;
+  }
+  .logo-wrapper {
+    gap: 1px;
+  }
+  .logo-tagline {
+    display: inline-flex;
+    font-size: 0.44rem;
+    letter-spacing: 0.09em;
+    line-height: 1.15;
+    gap: 4px;
+    opacity: 0.95;
+  }
+  .logo-tagline::before,
+  .logo-tagline::after {
+    width: 5px;
+  }
+  .logo-since {
+    font-size: 0.54rem;
+    letter-spacing: 0.1em;
+    padding: 1px 7px;
+  }
   .navbar-links {
-    position: fixed; top: 65px; left: 0; right: 0;
+    position: fixed; top: 78px; left: 0; right: 0;
     background: rgba(100,43,143,0.95);
     backdrop-filter: blur(20px);
     flex-direction: column; padding: 24px; gap: 8px;
@@ -92,5 +141,22 @@
   .navbar-links a { font-size: 1rem; padding: 12px 20px; color: #FFFFFF; }
   .navbar-links .nav-login-link { width: 100%; text-align: center; border: 1px solid rgba(255,255,255,0.35); }
   .navbar-links .nav-cta { margin-left: 0; width: 100%; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    height: 40px;
+  }
+  .logo-tagline {
+    font-size: 0.4rem;
+    letter-spacing: 0.08em;
+  }
+  .logo-tagline::before,
+  .logo-tagline::after {
+    width: 4px;
+  }
+  .logo-since {
+    font-size: 0.5rem;
+  }
 }
 
