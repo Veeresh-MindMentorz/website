@@ -22,8 +22,8 @@ export default function Hero() {
           <div className="hero-kicker">From First Move to Checkmate</div>
 
           <h1 className="hero-title">
-            Turn Your Child Into a
-            <span className="hero-highlight"> Tournament-Ready </span>
+            Turn Your Child Into&nbsp;a{' '}
+            <span className="hero-highlight">Tournament-Ready</span>{' '}
             Chess Player
           </h1>
 

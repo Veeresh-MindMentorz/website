@@ -359,8 +359,8 @@ function AntiSyllabus() {
 ══════════════════════════════════════════ */
 const globalStats = [
   { value: '2017', label: 'Founded' },
-  { value: '10+', label: 'Countries' },
-  { value: '2,500+', label: 'Students' },
+  { value: '20+', label: 'Countries' },
+  { value: '5000+', label: 'Students' },
   { value: '6', label: 'Mastery Levels' },
 ]
 

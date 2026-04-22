@@ -3,10 +3,10 @@ import { useEffect, useRef, useState } from 'react'
 import { BookOpen, GraduationCap, Trophy, Globe } from 'lucide-react'
 
 const stats = [
-  { Icon: BookOpen, value: 10000, suffix: '+', label: 'Classes Delivered' },
-  { Icon: GraduationCap, value: 2500, suffix: '+', label: 'Students Trained' },
+  { Icon: BookOpen, value: 60000, suffix: '+', label: 'Classes Delivered' },
+  { Icon: GraduationCap, value: 5000, suffix: '+', label: 'Students Trained' },
   { Icon: Trophy, value: 200, suffix: '+', label: 'Tournaments Conducted' },
-  { Icon: Globe, value: 10, suffix: '+', label: 'Countries Reached' },
+  { Icon: Globe, value: 20, suffix: '+', label: 'Countries Reached' },
 ]
 
 function CountUp({ target, suffix, active }) {
@@ -54,7 +54,7 @@ export default function Stats() {
             Our Impact
           </div>
           <h2 className="stats-title">Measured Progress. <span className="stats-gold">Real Outcomes.</span></h2>
-          <p className="stats-subtitle">Families trust Mind Mentorz because results are visible, structured, and consistent.</p>
+          <p className="stats-subtitle">Families trust MindMentorz because results are visible, structured, and consistent.</p>
         </div>
 
         <div className="stats-grid">

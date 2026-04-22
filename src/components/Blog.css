@@ -186,3 +186,89 @@
   .modal-compare { grid-template-columns: 1fr; }
 }
 
+/* ===== BLOG POST PAGE ===== */
+.blog-post-article {
+  background: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+.blog-post-header {
+  padding: 48px 0 36px;
+  background: linear-gradient(135deg, #EFE8F0, #FFFFFF);
+  border-bottom: 1px solid rgba(100,43,143,0.1);
+}
+.blog-post-body {
+  padding: 40px 0 60px;
+  max-width: 100%;
+}
+.blog-post-title {
+  font-size: 2.5rem;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-top: 16px;
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-weight: 800;
+}
+
+@media (max-width: 768px) {
+  .blog-post-header {
+    padding: 36px 0 24px;
+  }
+  .blog-post-body {
+    padding: 30px 0 40px;
+  }
+  .blog-post-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-post-header {
+    padding: 24px 0 20px;
+  }
+  .blog-post-body {
+    padding: 24px 0 30px;
+  }
+  .blog-post-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* Increase text sizes for full screen reading */
+.blog-post-body .blog-post-h1 {
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.blog-post-body .blog-post-p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.blog-post-body .modal-list-block li,
+.blog-post-body .modal-numbered li,
+.blog-post-body .compare-col li,
+.blog-post-body .modal-step p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.blog-post-body .modal-list-heading {
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+.blog-post-body .modal-step strong,
+.blog-post-body .modal-numbered li strong {
+  font-size: 1.15rem;
+}
+
+@media (max-width: 768px) {
+  .blog-post-body .blog-post-h1 { font-size: 1.6rem; margin-top: 28px; margin-bottom: 16px; }
+  .blog-post-body .blog-post-p { font-size: 1.05rem; }
+  .blog-post-body .modal-list-heading { font-size: 1.1rem; }
+  .blog-post-body .modal-list-block li,
+  .blog-post-body .modal-numbered li,
+  .blog-post-body .compare-col li,
+  .blog-post-body .modal-step p { font-size: 1rem; }
+}

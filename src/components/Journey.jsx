@@ -54,7 +54,9 @@ export default function Journey() {
               {i < steps.length - 1 && (
                 <div className="step-connector">
                   <div className="connector-line" />
-                  <span className="connector-arrow">→</span>
+                  <div className="connector-arrow">
+                    <ArrowRight size={22} strokeWidth={2.5} />
+                  </div>
                 </div>
               )}
             </div>

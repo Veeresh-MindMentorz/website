@@ -11,6 +11,7 @@ import Program from './components/Program'
 import Journey from './components/Journey'
 import Testimonials from './components/Testimonials'
 import Blog from './components/Blog'
+import BlogPost from './components/BlogPost'
 import FAQ from './components/FAQ'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
@@ -76,6 +77,7 @@ function App() {
         <Route path="/pricing" element={<LegalPage><Pricing /></LegalPage>} />
         <Route path="/locations" element={<LegalPage><Locations /></LegalPage>} />
         <Route path="/blogs" element={<LegalPage><Blog /></LegalPage>} />
+        <Route path="/blogs/:slug" element={<LegalPage><BlogPost /></LegalPage>} />
         <Route path="/about" element={<LegalPage><AboutUs /></LegalPage>} />
         <Route path="/privacy-policy" element={<LegalPage><PrivacyPolicy /></LegalPage>} />
         <Route path="/terms-of-service" element={<LegalPage><TermsOfService /></LegalPage>} />

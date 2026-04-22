@@ -36,14 +36,14 @@
 .journey-step:hover { background: rgba(255,255,255,0.18) !important; transform: translateY(-4px); }
 .step-glow { position: absolute; bottom: -60px; left: 50%; transform: translateX(-50%); width: 100px; height: 100px; border-radius: 50%; filter: blur(40px); opacity: 0.25; transition: opacity 0.3s ease; }
 .journey-step:hover .step-glow { opacity: 0.45; }
-.step-num { font-size: 3.2rem; font-weight: 900; font-family: var(--font-display); opacity: 0.15; line-height: 1; margin-bottom: 6px; color: #FFFFFF; }
+.step-num { font-size: 3rem; font-weight: 900; font-family: var(--font-display); opacity: 0.5; line-height: 1; margin-bottom: 8px; color: #FFFFFF; text-shadow: 0 2px 10px rgba(0,0,0,0.15); }
 .step-icon { display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
-.step-title { font-size: 1.05rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 8px; color: #FFFFFF; }
-.step-desc { font-size: 0.88rem; color: rgba(255,255,255,0.7) !important; }
+.step-title { font-size: 1.1rem; font-family: var(--font-body); font-weight: 700; margin-bottom: 8px; color: #FFFFFF; }
+.step-desc { font-size: 0.9rem; color: rgba(255,255,255,0.8) !important; }
 
-.step-connector { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 0 6px; }
-.connector-line { width: 36px; height: 2px; background: rgba(255,255,255,0.3); }
-.connector-arrow { font-size: 1.1rem; color: #F0BA6F; margin-top: -8px; }
+.step-connector { display: flex; align-items: center; justify-content: center; width: 44px; height: 24px; padding: 0; }
+.connector-line { width: 22px; height: 2px; background: rgba(255,255,255,0.3); border-radius: 2px; margin-right: -6px; z-index: 1; }
+.connector-arrow { display: flex; align-items: center; justify-content: center; color: #F0BA6F; z-index: 2; }
 
 /* Journey CTA */
 .journey-cta {
@@ -59,7 +59,8 @@
 
 @media (max-width: 860px) {
   .journey-steps { flex-direction: column; gap: 16px; }
-  .step-connector { transform: rotate(90deg); margin: -12px 0; }
+  .journey-step-wrapper { flex-direction: column; width: 100%; align-items: center; }
+  .step-connector { transform: rotate(90deg); margin: 16px 0; }
   .journey-cta-inner { flex-direction: column; text-align: center; }
   .journey-cta { padding: 28px 20px; }
 }
@@ -82,7 +83,7 @@
 
   .step-num {
     font-size: 2.6rem;
-    opacity: 0.25;
+    opacity: 0.55;
   }
 
   .step-icon { font-size: 2rem; margin-bottom: 10px; }
