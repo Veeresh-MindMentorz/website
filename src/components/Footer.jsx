@@ -56,16 +56,16 @@ export default function Footer() {
             </Link>
             <p>India's premier FIDE-focused chess academy. Turning beginners into tournament champions through structured, professional coaching.</p>
             <div className="footer-social">
-              <a href="https://www.instagram.com/mindmentorz" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon instagram">
+              <a href="https://www.instagram.com/mindmentorz_academy" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon instagram">
                 <InstagramIcon />
               </a>
-              <a href="https://www.facebook.com/mindmentorz" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-icon facebook">
+              <a href="https://www.facebook.com/mmentorz" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-icon facebook">
                 <FacebookIcon />
               </a>
-              <a href="https://www.linkedin.com/company/mindmentorz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon linkedin">
+              <a href="https://in.linkedin.com/company/mindmentorz" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-icon linkedin">
                 <LinkedInIcon />
               </a>
-              <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-icon whatsapp">
+              <a href="https://wa.me/918618568046" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="social-icon whatsapp">
                 <WhatsAppIcon />
               </a>
             </div>
