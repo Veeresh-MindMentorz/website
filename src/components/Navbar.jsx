@@ -62,7 +62,7 @@ export default function Navbar() {
               {l.isPage ? (
                 <Link to={l.href} onClick={() => setMenuOpen(false)}>{l.label}</Link>
               ) : (
-                <a href={l.href} onClick={(e) => {
+                <a href={l.href.startsWith('#') ? `/${l.href}` : l.href} onClick={(e) => {
                   e.preventDefault()
                   handleNavClick(l.href)
                 }}>{l.label}</a>

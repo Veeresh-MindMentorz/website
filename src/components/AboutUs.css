@@ -130,7 +130,7 @@
 /* 2-column layout: timeline + story cards */
 .au-origin-main-grid {
   display: grid;
-  grid-template-columns: minmax(300px, 360px) 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 36px;
   align-items: start;
   padding-top: 48px;
@@ -140,11 +140,13 @@
 .au-timeline-card {
   background: linear-gradient(160deg, #1a0638 0%, #2d0d5e 70%, #3d1270 100%);
   border-radius: var(--radius-lg);
-  padding: 32px 28px 24px;
+  padding: 36px 28px 24px;
   box-shadow: 0 24px 72px rgba(100,43,143,.4);
   border: 1px solid rgba(100,43,143,.3);
   position: relative;
   overflow: hidden;
+  min-width: 0;
+  width: 100%;
 }
 
 /* Chess corner decoration */
@@ -166,6 +168,8 @@
   color: var(--gold);
   margin-bottom: 28px;
   text-transform: uppercase;
+  position: relative;
+  z-index: 2;
 }
 
 /* Vertical timeline */
@@ -254,6 +258,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   align-content: start;
+  min-width: 0;
+  max-width: 860px;
+  margin: 0 auto;
+  width: 100%;
 }
 .au-story-card {
   border-radius: var(--radius-md);
@@ -1197,8 +1205,7 @@
   .au-dash-body      { grid-template-columns: 1fr; }
   .au-dash-left      { border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
 
-  /* Collapse origin grid so timeline card is never clipped */
-  .au-origin-main-grid   { grid-template-columns: 1fr; }
+  /* Collapse origin grid already single column at all sizes below 1400px */
   .au-story-cards-grid   { grid-template-columns: 1fr 1fr; }
   .au-timeline-card      { max-width: 560px; margin: 0 auto; }
 }

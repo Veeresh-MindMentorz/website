@@ -76,8 +76,8 @@ function AboutHero() {
 const milestones = [
   { year: '2017', Icon: MapPin, dotColor: '#F8A213', label: 'The Beginning', desc: 'Started in Bangalore with 8 students and a vision.' },
   { year: '2019', Icon: TrendingUp, dotColor: '#009B77', label: 'City-Wide Expansion', desc: 'Grew to 50+ batches across multiple Indian cities.' },
-  { year: '2021', Icon: Globe2, dotColor: '#3B5BDB', label: 'Went Global', desc: 'Launched online & reached students in 10+ countries.' },
-  { year: 'Now', Icon: Crown, dotColor: '#F8A213', label: 'FIDE Standard Achieved', desc: '6-level program, 1,500+ students worldwide.', active: true },
+  { year: '2021', Icon: Globe2, dotColor: '#3B5BDB', label: 'Went Global', desc: 'Launched online & reached students in 20+ countries.' },
+  { year: 'Now', Icon: Crown, dotColor: '#F8A213', label: 'FIDE Standard Achieved', desc: '6-level program, 2,500+ students worldwide.', active: true },
 ]
 
 const storyCards = [
@@ -161,7 +161,7 @@ function OriginStory() {
               </div>
 
               {/* Bottom quote */}
-              <div className="au-tl-quote">"From 8 students to 1,500+. From one city to the world."</div>
+              <div className="au-tl-quote">"From 8 students to 2,500+. From one city to the world."</div>
             </div>
           </Reveal>
 
