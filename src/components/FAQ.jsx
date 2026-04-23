@@ -16,7 +16,7 @@ const faqs = [
     a: 'Through structured assessments and ChessKid performance reports after every 16 sessions. Parents receive detailed reports showing improvement in rating, puzzles solved, and tactical skill.',
   },
   {
-    q: 'What makes Mind Mentorz different?',
+    q: 'What makes MindMentorz different?',
     a: 'Our structured 6-level curriculum, ChessKid integration, FIDE-rated coaching team, tournament focus, and measurable results set us apart from conventional chess classes.',
   },
   {

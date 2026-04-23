@@ -10,6 +10,7 @@ import WhyUs from './components/WhyUs'
 import Program from './components/Program'
 import Journey from './components/Journey'
 import Testimonials from './components/Testimonials'
+import Gallery from './components/Gallery'
 import Blog from './components/Blog'
 import BlogPost from './components/BlogPost'
 import FAQ from './components/FAQ'
@@ -50,6 +51,7 @@ function AppContent() {
         <Program />
         <Journey />
         <Testimonials />
+        {/* <Gallery /> */}
         <FAQ />
         <CTA />
       </main>

@@ -1,11 +1,16 @@
-﻿.testimonials-section {
+/* ─── Section ──────────────────────────────────────────────── */
+.testimonials-section {
   background:
     radial-gradient(circle at 88% 10%, rgba(245,197,24,0.14), transparent 34%),
+    radial-gradient(circle at 10% 90%, rgba(100,43,143,0.08), transparent 40%),
     #FFFFFF;
+  overflow: hidden;
+  padding-bottom: 60px;
 }
 
+/* ─── Header ───────────────────────────────────────────────── */
 .testimonials-header {
-  margin-bottom: 28px;
+  margin-bottom: 36px;
 }
 
 .testimonials-heading {
@@ -14,64 +19,265 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #0F0D1A;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.testimonials-sub {
+  font-size: 1.05rem;
+  color: #6B7280;
+  margin-bottom: 14px;
 }
 
 .rating-badge {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  margin: 10px auto 0;
+  margin: 0 auto;
   background: #FFF9E6;
-  border: 1px solid rgba(245,197,24,0.5);
+  border: 1px solid rgba(245,197,24,0.55);
   border-radius: 100px;
-  padding: 10px 24px;
+  padding: 10px 28px;
 }
 
 .stars {
   color: var(--gold);
-  font-size: 1.05rem;
-  letter-spacing: 2px;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
 }
 
 .rating-text {
   font-weight: 700;
   color: var(--text-primary);
-  font-size: 0.94rem;
+  font-size: 0.95rem;
 }
 
-.testimonials-widget-wrap {
+/* ─── Marquee Container ────────────────────────────────────── */
+.marquee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  /* Edge fade */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
+}
+
+.marquee-track {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ─── Marquee Animations ───────────────────────────────────── */
+@keyframes scrollLeft {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.marquee-inner {
+  display: flex;
+  gap: 18px;
+  width: max-content;
+}
+
+.marquee-left .marquee-inner {
+  animation: scrollLeft 55s linear infinite;
+}
+
+.marquee-right .marquee-inner {
+  animation: scrollRight 55s linear infinite;
+}
+
+/* Pause on hover */
+.marquee-container.paused .marquee-inner {
+  animation-play-state: paused;
+}
+
+/* ─── Review Card ──────────────────────────────────────────── */
+.review-card {
+  flex: 0 0 300px;
   background: #FFFFFF;
-  border: 1px solid rgba(100,43,143,0.14);
-  border-radius: 20px;
-  padding: 16px;
-  box-shadow: 0 14px 36px rgba(100,43,143,0.1);
+  border: 1px solid rgba(100,43,143,0.12);
+  border-radius: 18px;
+  padding: 22px 20px 18px;
+  box-shadow: 0 4px 24px rgba(100,43,143,0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: default;
   position: relative;
   overflow: hidden;
 }
 
-.testimonials-widget-wrap::before {
+.review-card::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--gold), var(--primary), var(--gold));
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--primary));
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(100,43,143,0.14);
+}
+
+.review-card:hover::before {
+  opacity: 1;
+}
+
+/* ─── Card Top Row ─────────────────────────────────────────── */
+.review-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.5px;
+}
+
+.review-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.review-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #0F0D1A;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Stars ────────────────────────────────────────────────── */
+.review-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.review-star {
+  width: 14px;
+  height: 14px;
+  fill: #D1D5DB;
+}
+
+.review-star.filled {
+  fill: #F5C518;
+}
+
+/* ─── Google Badge ─────────────────────────────────────────── */
+.google-badge {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.google-badge svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* ─── Review Text ──────────────────────────────────────────── */
+.review-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #374151;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ─── Google Link Button ───────────────────────────────────── */
+.google-link-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.google-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  border: 1.5px solid rgba(100,43,143,0.2);
+  border-radius: 100px;
+  padding: 12px 28px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #0F0D1A;
+  text-decoration: none;
+  box-shadow: 0 2px 12px rgba(100,43,143,0.08);
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.google-link-btn:hover {
+  border-color: var(--primary);
+  box-shadow: 0 6px 24px rgba(100,43,143,0.15);
+  transform: translateY(-2px);
+}
+
+.google-link-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* ─── Responsive ───────────────────────────────────────────── */
 @media (max-width: 640px) {
   .testimonials-header {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 
   .testimonials-heading {
     font-size: clamp(1.65rem, 8vw, 2.2rem);
   }
 
-  .testimonials-widget-wrap {
-    padding: 10px;
-    border-radius: 14px;
+  .review-card {
+    flex: 0 0 260px;
+    padding: 18px 16px 14px;
+  }
+
+  .review-text {
+    -webkit-line-clamp: 3;
+  }
+
+  .marquee-container {
+    gap: 14px;
   }
 }
-

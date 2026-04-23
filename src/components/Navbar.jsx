@@ -34,11 +34,8 @@ export default function Navbar() {
   const handleNavClick = (href) => {
     setMenuOpen(false)
     if (location.pathname !== '/') {
-      navigate('/')
-      setTimeout(() => {
-        const element = document.querySelector(href)
-        element?.scrollIntoView({ behavior: 'smooth' })
-      }, 100)
+      // Navigate to home with the hash — ScrollToTop will handle the scroll
+      navigate('/' + href)
     } else {
       const element = document.querySelector(href)
       element?.scrollIntoView({ behavior: 'smooth' })
