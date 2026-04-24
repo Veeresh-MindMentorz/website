@@ -89,6 +89,20 @@ const coaches = [
     color: '#6366F1',
     features: ['Strong rating credentials', 'Years of tournament experience', 'Deep focus on calculation', 'Competitive mindset training'],
   },
+  {
+    photo: '/NIranjiny.jpeg', name: 'Niranjiny', title: 'COACH',
+    rating: 'Rating: 1743', exp: 'Experienced',
+    speciality: 'Endgame Mastery & Strategy',
+    color: '#E11D48',
+    features: ['Strong rating credentials', 'Years of tournament experience', 'Deep focus on calculation', 'Competitive mindset training'],
+  },
+  {
+    photo: '/Sabarish.jpeg', name: 'Sabarish', title: 'COACH',
+    rating: 'Rating: 1684', exp: 'Experienced',
+    speciality: 'Opening Theory & Preparation',
+    color: '#0EA5E9',
+    features: ['Strong rating credentials', 'Years of tournament experience', 'Deep focus on calculation', 'Competitive mindset training'],
+  },
 ]
 
 export default function Coaches() {

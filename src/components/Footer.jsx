@@ -93,6 +93,7 @@ export default function Footer() {
               <li><a href="/#coaches">Our Coaches</a></li>
               <li><a href="/#results">Student Results</a></li>
               <li><a href="/#testimonials">Testimonials</a></li>
+              <li><a href="/#gallery">Gallery</a></li>
               <li><a href="/#faq">FAQ</a></li>
             </ul>
           </div>

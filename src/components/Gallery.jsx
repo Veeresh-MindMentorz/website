@@ -1,101 +1,80 @@
-import { useRef, useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import './Gallery.css'
 import { Images, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const galleryItems = [
-  {
-    src: '/event1.png',
-    caption: 'Tournament Day',
-    tag: 'Event',
-  },
-  {
-    src: '/event2.png',
-    caption: 'Award Ceremony',
-    tag: 'Achievement',
-  },
-  {
-    src: '/event3.png',
-    caption: 'Chess Camp',
-    tag: 'Event',
-  },
-  {
-    src: '/student-yashas.jpg',
-    caption: 'Yashas Ram Tetali',
-    tag: 'Student',
-  },
-  {
-    src: '/student-vrishank.jpg',
-    caption: 'Vrishank Reddy',
-    tag: 'Student',
-  },
-  {
-    src: '/student-sathvik.jpg',
-    caption: 'Sathvik Sharath',
-    tag: 'Student',
-  },
-  {
-    src: '/student-riddhi.jpg',
-    caption: 'Riddhi Gupta',
-    tag: 'Student',
-  },
-  {
-    src: '/student-prishita.jpg',
-    caption: 'Prishita Choudhary',
-    tag: 'Student',
-  },
-  {
-    src: '/student-manjoyee.jpg',
-    caption: 'Manjoyee Roy',
-    tag: 'Student',
-  },
-  {
-    src: '/student-ariv.jpg',
-    caption: 'FM Ariv Debmisra',
-    tag: 'Student',
-  },
-  {
-    src: '/student-anay.jpg',
-    caption: 'Anay Banka',
-    tag: 'Student',
-  },
-  {
-    src: '/about-hero.png',
-    caption: 'MindMentorz Academy',
-    tag: 'Academy',
-  },
+  { src: '/g1.jpeg',  caption: 'Tournament Day',           tag: 'Event' },
+  { src: '/g2.jpeg',  caption: 'Award Ceremony',           tag: 'Achievement' },
+  { src: '/g3.jpeg',  caption: 'Chess Camp',               tag: 'Event' },
+  { src: '/g4.jpg',   caption: 'Champion Celebration',     tag: 'Achievement' },
+  { src: '/g5.jpeg',  caption: 'Training Session',         tag: 'Academy' },
+  { src: '/g6.jpg',   caption: 'Young Grandmaster',        tag: 'Student' },
+  { src: '/g7.jpeg',  caption: 'Focused Minds',            tag: 'Academy' },
+  { src: '/g8.jpeg',  caption: 'Prize Distribution',       tag: 'Achievement' },
+  { src: '/g9.jpg',   caption: 'Batch Graduation',         tag: 'Event' },
+  { src: '/g10.jpeg', caption: 'Live Tournament',          tag: 'Event' },
+  { src: '/g11.webp', caption: 'Chess Olympiad Prep',      tag: 'Academy' },
+  { src: '/g12.webp', caption: 'MindMentorz Community',   tag: 'Academy' },
 ]
 
+// Split into two rows
+const ROW1 = galleryItems.slice(0, Math.ceil(galleryItems.length / 2))
+const ROW2 = galleryItems.slice(Math.ceil(galleryItems.length / 2))
+
+const TAG_COLORS = {
+  Event:       { bg: 'rgba(100,43,143,0.12)', color: '#642b8f' },
+  Achievement: { bg: 'rgba(248,162,19,0.14)', color: '#b87409' },
+  Student:     { bg: 'rgba(14,165,233,0.12)', color: '#0369a1' },
+  Academy:     { bg: 'rgba(16,185,129,0.12)', color: '#047857' },
+}
+
+function GalleryCard({ item, onClick }) {
+  const tagStyle = TAG_COLORS[item.tag] || TAG_COLORS.Event
+  return (
+    <div
+      className="gal-card"
+      onClick={onClick}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && onClick()}
+      aria-label={`Open ${item.caption}`}
+    >
+      <div className="gal-img-wrap">
+        <img src={item.src} alt={item.caption} className="gal-img" loading="lazy" />
+        <div className="gal-overlay">
+          <span className="gal-zoom">⤢</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MarqueeRow({ items, direction = 'left', onCardClick, offset = 0 }) {
+  const doubled = [...items, ...items]
+  return (
+    <div className={`gal-marquee-track gal-marquee-${direction}`}>
+      <div className="gal-marquee-inner">
+        {doubled.map((item, i) => (
+          <GalleryCard
+            key={i}
+            item={item}
+            onClick={() => onCardClick(offset + (i % items.length))}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function Gallery() {
-  const trackRef = useRef(null)
-  const [canLeft, setCanLeft] = useState(false)
-  const [canRight, setCanRight] = useState(true)
-  const [lightbox, setLightbox] = useState(null) // index of open image
-
-  const updateArrows = () => {
-    const el = trackRef.current
-    if (!el) return
-    setCanLeft(el.scrollLeft > 4)
-    setCanRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
-  }
-
-  useEffect(() => {
-    const el = trackRef.current
-    if (!el) return
-    el.addEventListener('scroll', updateArrows, { passive: true })
-    updateArrows()
-    return () => el.removeEventListener('scroll', updateArrows)
-  }, [])
-
-  const scroll = (dir) => {
-    trackRef.current?.scrollBy({ left: dir * 340, behavior: 'smooth' })
-  }
+  const [lightbox, setLightbox] = useState(null)
+  const [paused, setPaused] = useState(false)
 
   const openLightbox = (i) => setLightbox(i)
   const closeLightbox = () => setLightbox(null)
   const prevLight = () => setLightbox((p) => (p - 1 + galleryItems.length) % galleryItems.length)
   const nextLight = () => setLightbox((p) => (p + 1) % galleryItems.length)
 
-  // keyboard nav
   useEffect(() => {
     if (lightbox === null) return
     const handler = (e) => {
@@ -110,10 +89,9 @@ export default function Gallery() {
   return (
     <section className="section gallery-section" id="gallery">
       <div className="container">
-        {/* Header */}
         <div className="text-center gallery-header">
           <div className="section-tag">
-            <Images size={13} strokeWidth={2} style={{ color: '#F8A213' }} />
+            <Images size={13} strokeWidth={2} style={{ color: '#F8A213', display: 'inline', verticalAlign: 'middle', marginRight: 5 }} />
             Our Gallery
           </div>
           <h2 className="section-title">
@@ -124,63 +102,30 @@ export default function Gallery() {
             Real moments from tournaments, training sessions, and champion celebrations.
           </p>
         </div>
+      </div>
 
-        {/* Carousel wrapper */}
-        <div className="gallery-carousel-wrap">
-          {/* Left arrow */}
-          <button
-            className={`gallery-arrow gallery-arrow--left ${canLeft ? '' : 'gallery-arrow--hidden'}`}
-            onClick={() => scroll(-1)}
-            aria-label="Scroll left"
-          >
-            <ChevronLeft size={22} strokeWidth={2.5} />
-          </button>
+      {/* Dual-row marquee */}
+      <div
+        className={`gal-marquee-container${paused ? ' paused' : ''}`}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <MarqueeRow
+          items={ROW1}
+          direction="left"
+          onCardClick={openLightbox}
+          offset={0}
+        />
+        <MarqueeRow
+          items={ROW2}
+          direction="right"
+          onCardClick={openLightbox}
+          offset={ROW1.length}
+        />
+      </div>
 
-          {/* Scroll track */}
-          <div className="gallery-track" ref={trackRef}>
-            {galleryItems.map((item, i) => (
-              <div
-                key={i}
-                className="gallery-card"
-                onClick={() => openLightbox(i)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => e.key === 'Enter' && openLightbox(i)}
-                aria-label={`Open ${item.caption}`}
-              >
-                <div className="gallery-img-wrap">
-                  <img
-                    src={item.src}
-                    alt={item.caption}
-                    className="gallery-img"
-                    loading="lazy"
-                  />
-                  <div className="gallery-overlay">
-                    <span className="gallery-zoom-icon">⤢</span>
-                  </div>
-                </div>
-                <div className="gallery-meta">
-                  <span className="gallery-tag">{item.tag}</span>
-                  <span className="gallery-caption">{item.caption}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Right arrow */}
-          <button
-            className={`gallery-arrow gallery-arrow--right ${canRight ? '' : 'gallery-arrow--hidden'}`}
-            onClick={() => scroll(1)}
-            aria-label="Scroll right"
-          >
-            <ChevronRight size={22} strokeWidth={2.5} />
-          </button>
-        </div>
-
-        {/* Scroll hint dots */}
-        <div className="gallery-scroll-hint">
-          <span className="gallery-hint-text">Swipe or click arrows to explore</span>
-        </div>
+      <div className="gal-hint">
+        <span>Hover to pause · Click any photo to enlarge</span>
       </div>
 
       {/* Lightbox */}
@@ -200,7 +145,9 @@ export default function Gallery() {
               <ChevronRight size={28} />
             </button>
             <div className="lightbox-caption">
-              <span className="gallery-tag">{galleryItems[lightbox].tag}</span>
+              <span className="gal-tag" style={{ background: TAG_COLORS[galleryItems[lightbox].tag]?.bg, color: TAG_COLORS[galleryItems[lightbox].tag]?.color }}>
+                {galleryItems[lightbox].tag}
+              </span>
               <span>{galleryItems[lightbox].caption}</span>
             </div>
           </div>

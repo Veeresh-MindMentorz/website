@@ -51,7 +51,7 @@ function AppContent() {
         <Program />
         <Journey />
         <Testimonials />
-        {/* <Gallery /> */}
+        <Gallery />
         <FAQ />
         <CTA />
       </main>
