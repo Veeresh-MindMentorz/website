@@ -97,7 +97,7 @@ export default function Pricing() {
                 <div style={{ fontSize: '0.85rem', color: '#009B77', marginBottom: '8px', display: 'flex', gap: '6px' }}><span>⚠️</span> <span>Short-term exposure — limited time for deep improvement</span></div>
                 <div style={{ fontSize: '0.85rem', color: '#0C8599', marginBottom: '24px', display: 'flex', gap: '6px' }}><span>💡</span> <span>Most students upgrade to 16 classes to see real results</span></div>
 
-                <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
+                <a href="https://skuare.mindmentorz.com/public/register" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
               </div>
 
               {/* 2 Months */}
@@ -133,7 +133,7 @@ export default function Pricing() {
 
                 <div style={{ fontSize: '0.9rem', color: '#642b8f', fontWeight: 700, marginBottom: '24px', display: 'flex', gap: '6px' }}><span>👉</span> <span>Best balance of results, guidance, and value</span></div>
 
-                <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
+                <a href="https://skuare.mindmentorz.com/public/register" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
               </div>
 
               {/* 6 Months */}
@@ -170,7 +170,7 @@ export default function Pricing() {
 
                 <div style={{ fontSize: '0.9rem', color: '#009B77', fontWeight: 700, marginBottom: '24px', display: 'flex', gap: '6px' }}><span>👉</span> <span>For parents serious about long-term mastery and real results</span></div>
 
-                <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
+                <a href="https://skuare.mindmentorz.com/public/register" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
               </div>
             </div>
           </div>
@@ -190,7 +190,7 @@ export default function Pricing() {
                 <h3 className="pricing-pack-name">8 Class Pack</h3>
                 <div className="pricing-price">₹3,840</div>
                 <p className="pricing-ideal">Perfect for getting started at our academy.</p>
-                <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
+                <a href="https://skuare.mindmentorz.com/public/register" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
               </div>
 
               {/* 2 Months */}
@@ -200,7 +200,7 @@ export default function Pricing() {
                 <h3 className="pricing-pack-name">16 Class Pack</h3>
                 <div className="pricing-price">₹7,072</div>
                 <p className="pricing-ideal">The best balance of value and commitment.</p>
-                <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
+                <a href="https://skuare.mindmentorz.com/public/register" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
               </div>
 
               {/* 6 Months */}
@@ -209,7 +209,7 @@ export default function Pricing() {
                 <h3 className="pricing-pack-name">48 Class Pack</h3>
                 <div className="pricing-price">₹18,480</div>
                 <p className="pricing-ideal">Best value for dedicated students committed to mastery.</p>
-                <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
+                <a href="https://skuare.mindmentorz.com/public/register" target="_blank" rel="noopener noreferrer" className="btn-primary pricing-btn" style={{ marginTop: 'auto' }}><span>Get Started</span></a>
               </div>
             </div>
           </div>

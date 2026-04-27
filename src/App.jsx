@@ -10,7 +10,6 @@ import WhyUs from './components/WhyUs'
 import Program from './components/Program'
 import Journey from './components/Journey'
 import Testimonials from './components/Testimonials'
-import Gallery from './components/Gallery'
 import Blog from './components/Blog'
 import BlogPost from './components/BlogPost'
 import FAQ from './components/FAQ'
@@ -26,7 +25,7 @@ import AboutUs from './components/AboutUs'
 function FloatingTrialButton() {
   return (
     <a
-      href="https://skuare.mindmentorz.com/parent-login"
+      href="https://skuare.mindmentorz.com/public/register"
       target="_blank"
       rel="noopener noreferrer"
       className="whatsapp-float"
@@ -51,7 +50,6 @@ function AppContent() {
         <Program />
         <Journey />
         <Testimonials />
-        <Gallery />
         <FAQ />
         <CTA />
       </main>

@@ -87,7 +87,7 @@ export default function BlogPost() {
               if (block.type === 'cta') return (
                 <div key={i} className="modal-cta-block">
                   <p><ArrowRight size={16} strokeWidth={2.5} style={{ display: 'inline', verticalAlign: 'middle', marginRight: 6, color: '#F8A213' }} /> Want your child to improve faster?</p>
-                  <a href="https://skuare.mindmentorz.com/parent-login" target="_blank" rel="noopener noreferrer" className="btn-primary"><span>Book a Free Trial →</span></a>
+                  <a href="https://skuare.mindmentorz.com/public/register" target="_blank" rel="noopener noreferrer" className="btn-primary"><span>Book a Free Trial →</span></a>
                 </div>
               )
               if (block.type === 'gallery') return (

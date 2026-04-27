@@ -34,7 +34,7 @@ export default function CTA() {
           </div>
 
           <a
-            href="https://skuare.mindmentorz.com/parent-login"
+            href="https://skuare.mindmentorz.com/public/register"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary cta-btn"

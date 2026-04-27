@@ -1,6 +1,7 @@
 import './Results.css'
 import { useRef } from 'react'
 import { Trophy, TrendingUp, Crown, Medal, Target, ArrowRight } from 'lucide-react'
+import Gallery from './Gallery'
 
 const students = [
   { photo: '/student-yashas.jpg',   name: 'Yashas Ram Tetali',  age: 10, achievement: '0 → 1450 Rapid Rating in 12 Months', sub: '3 Tournament Wins',             SubIcon: Trophy,    color: '#7C3AED', months: 12, before: 0,    after: 1450 },
@@ -87,6 +88,11 @@ export default function Results() {
             <ArrowRight size={16} strokeWidth={2.5} style={{ color: '#F8A213', flexShrink: 0 }} />
             <strong>Consistent training + the right system = predictable progress</strong>
           </p>
+        </div>
+
+        {/* Gallery integrated into Student Results section */}
+        <div style={{ marginTop: '60px' }}>
+          <Gallery />
         </div>
       </div>
     </section>

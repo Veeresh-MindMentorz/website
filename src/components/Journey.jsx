@@ -72,7 +72,7 @@ export default function Journey() {
               </h3>
               <p>Limited slots to maintain coaching quality</p>
             </div>
-            <a href="https://skuare.mindmentorz.com/parent-login" 
+            <a href="https://skuare.mindmentorz.com/public/register" 
                target="_blank" rel="noopener noreferrer" className="btn-primary">
               <span>Book Free Trial →</span>
             </a>

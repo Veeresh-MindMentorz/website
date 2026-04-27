@@ -87,7 +87,7 @@ export default function Gallery() {
   }, [lightbox])
 
   return (
-    <section className="section gallery-section" id="gallery">
+    <div className="gallery-section" id="gallery" style={{ padding: '40px 0', borderRadius: '24px' }}>
       <div className="container">
         <div className="text-center gallery-header">
           <div className="section-tag">
@@ -153,6 +153,6 @@ export default function Gallery() {
           </div>
         </div>
       )}
-    </section>
+    </div>
   )
 }

@@ -61,7 +61,7 @@ function AboutHero() {
           Most academies teach chess as a hobby.{' '}
           <strong>We treat it as a discipline.</strong>
         </p>
-        <a href="https://skuare.mindmentorz.com/parent-login" target="_blank"
+        <a href="https://skuare.mindmentorz.com/public/register" target="_blank"
           rel="noopener noreferrer" className="btn-primary au-hero-cta">
           <span>Book a Free Assessment &amp; Trial →</span>
         </a>
@@ -481,7 +481,7 @@ function AboutCTA() {
           <div className="au-cta-chess-icon">♛</div>
           <h2 className="au-cta-headline">Your Child's FIDE Journey<br />Starts with a <span className="au-gold">Single Move.</span></h2>
           <p className="au-cta-sub">Join 1,500+ students progressing beyond basics</p>
-          <a href="https://skuare.mindmentorz.com/parent-login" target="_blank"
+          <a href="https://skuare.mindmentorz.com/public/register" target="_blank"
             rel="noopener noreferrer" className="btn-primary au-cta-big-btn" id="about-cta-btn">
             <span>Book a Free Assessment &amp; Trial</span>
           </a>
