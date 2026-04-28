@@ -73,7 +73,7 @@ export default function Navbar() {
           ))}
           <li>
             <a
-              href="https://skuare.mindmentorz.com/parent-login"
+              href="https://skuare.mindmentorz.com/public/register"
               className="btn-primary nav-cta"
               target="_blank"
               rel="noopener noreferrer"
