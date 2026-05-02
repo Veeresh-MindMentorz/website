@@ -68,7 +68,13 @@ export default function Navbar() {
           ))}
           {portalLinks.map(l => (
             <li key={l.label}>
-              <a className="nav-login-link" href={l.href} target="_blank" rel="noopener noreferrer" onClick={() => setMenuOpen(false)}>{l.label}</a>
+              <a
+                className={`nav-login-link ${l.label === 'Kids Login' ? 'nav-kids-login' : 'nav-parent-login'}`}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+              >{l.label}</a>
             </li>
           ))}
           <li>

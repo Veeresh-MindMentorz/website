@@ -3,7 +3,6 @@ import chessKidLearningImage from '../Kids enjoying ChessKid learning adventure.
 import trainingSessionImage from '../Focused minds in a chess training session (1).png'
 import {
   Swords,
-  XCircle,
   CheckCircle2,
   Star,
   Gamepad2,
@@ -17,6 +16,8 @@ import {
   TrendingUp,
   ArrowRight,
 } from 'lucide-react'
+
+const advantageImage = '/advantage.png'
 
 const typical = [
   'Random, unstructured learning',
@@ -66,23 +67,9 @@ export default function WhyUs() {
           <div className="divider divider-center" />
         </div>
 
-        {/* Comparison */}
-        <div className="why-comparison">
-          <div className="comparison-card typical">
-            <div className="comparison-header">
-              <span className="comp-icon"><XCircle size={22} strokeWidth={2} /></span>
-              <h3>Typical Chess Classes</h3>
-            </div>
-            <ul>
-              {typical.map(t => (
-                <li key={t}><span className="comp-cross">✗</span> {t}</li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="vs-badge">VS</div>
-
-          <div className="comparison-card advantage">
+        {/* MindMentorz Advantage - full width with image */}
+        <div className="why-advantage-showcase">
+          <div className="why-advantage-content">
             <div className="comparison-header">
               <span className="comp-icon"><CheckCircle2 size={22} strokeWidth={2} /></span>
               <h3>MindMentorz Advantage</h3>
@@ -92,6 +79,9 @@ export default function WhyUs() {
                 <li key={a}><span className="comp-check">✓</span> {a}</li>
               ))}
             </ul>
+          </div>
+          <div className="why-advantage-image">
+            <img src={advantageImage} alt="MindMentorz Advantage" className="advantage-img" />
           </div>
         </div>
 

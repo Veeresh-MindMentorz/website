@@ -10,6 +10,7 @@ import WhyUs from './components/WhyUs'
 import Program from './components/Program'
 import Journey from './components/Journey'
 import Testimonials from './components/Testimonials'
+import Gallery from './components/Gallery'
 import Blog from './components/Blog'
 import BlogPost from './components/BlogPost'
 import FAQ from './components/FAQ'
@@ -20,6 +21,7 @@ import RefundPolicy from './components/RefundPolicy'
 import TermsOfService from './components/TermsOfService'
 import Pricing from './components/Pricing'
 import Locations from './components/Locations'
+import CenterPage from './components/CenterPage'
 import AboutUs from './components/AboutUs'
 
 function FloatingTrialButton() {
@@ -46,6 +48,7 @@ function AppContent() {
         <Stats />
         <WhyUs />
         <Coaches />
+        <Gallery />
         <Results />
         <Program />
         <Journey />
@@ -68,6 +71,11 @@ function LegalPage({ children }) {
   )
 }
 
+// Center pages: no main Navbar, no Footer — standalone experience
+function CenterLayout({ children }) {
+  return <>{children}</>
+}
+
 function App() {
   return (
     <Router>
@@ -76,6 +84,7 @@ function App() {
         <Route path="/" element={<AppContent />} />
         <Route path="/pricing" element={<LegalPage><Pricing /></LegalPage>} />
         <Route path="/locations" element={<LegalPage><Locations /></LegalPage>} />
+        <Route path="/locations/:slug" element={<CenterLayout><CenterPage /></CenterLayout>} />
         <Route path="/blogs" element={<LegalPage><Blog /></LegalPage>} />
         <Route path="/blogs/:slug" element={<LegalPage><BlogPost /></LegalPage>} />
         <Route path="/about" element={<LegalPage><AboutUs /></LegalPage>} />

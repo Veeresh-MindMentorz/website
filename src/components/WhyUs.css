@@ -39,6 +39,61 @@
 .comp-check { color: var(--primary); font-weight: 700; }
 .vs-badge { width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: #FFFFFF; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 0.88rem; flex-shrink: 0; box-shadow: 0 4px 16px rgba(100,43,143,0.3); }
 
+/* MindMentorz Advantage Showcase */
+.why-advantage-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  margin: 42px 0;
+  background: linear-gradient(145deg, #F3EAFF 0%, #F8F3FF 100%);
+  border: 1px solid rgba(100,43,143,0.25);
+  border-radius: var(--radius-lg);
+  padding: 36px 36px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 32px rgba(100,43,143,0.12);
+}
+.why-advantage-showcase::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--primary), var(--gold));
+}
+.why-advantage-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+.why-advantage-content ul {
+  list-style: none;
+  margin-top: 8px;
+}
+.why-advantage-content li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(100,43,143,0.08);
+  font-size: 0.92rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.why-advantage-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.advantage-img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(100,43,143,0.18);
+  object-fit: cover;
+  border: 1px solid rgba(100,43,143,0.15);
+}
+
 /* Feature Block */
 .feature-block {
   padding: 28px 28px;
@@ -124,6 +179,14 @@
   }
   .feature-image {
     max-height: 198px;
+  }
+  .why-advantage-showcase {
+    grid-template-columns: 1fr;
+    padding: 24px 18px;
+    gap: 20px;
+  }
+  .advantage-img {
+    max-width: 100%;
   }
 }
 

@@ -1,7 +1,6 @@
 import './Results.css'
 import { useRef } from 'react'
 import { Trophy, TrendingUp, Crown, Medal, Target, ArrowRight } from 'lucide-react'
-import Gallery from './Gallery'
 
 const students = [
   { photo: '/student-yashas.jpg',   name: 'Yashas Ram Tetali',  age: 10, achievement: '0 → 1450 Rapid Rating in 12 Months', sub: '3 Tournament Wins',             SubIcon: Trophy,    color: '#7C3AED', months: 12, before: 0,    after: 1450 },
@@ -37,6 +36,7 @@ export default function Results() {
             We don't just teach chess — we deliver measurable improvement.
           </p>
         </div>
+
 
         {/* Outer relative wrapper for side arrows */}
         <div className="results-carousel-container">
@@ -90,10 +90,7 @@ export default function Results() {
           </p>
         </div>
 
-        {/* Gallery integrated into Student Results section */}
-        <div style={{ marginTop: '60px' }}>
-          <Gallery />
-        </div>
+
       </div>
     </section>
   )

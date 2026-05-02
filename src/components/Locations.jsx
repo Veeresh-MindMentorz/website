@@ -1,5 +1,6 @@
 import './Locations.css'
-import { MapPin, Phone } from 'lucide-react'
+import { MapPin, Phone, ArrowRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 function DetailIcon({ icon: Icon, bg, color }) {
   return (
@@ -47,9 +48,14 @@ export default function Locations() {
               </div>
             </div>
 
-            <a href="https://maps.google.com/?q=MindMentorz+Kothanur" target="_blank" rel="noopener noreferrer" className="btn-direction kothanur-btn">
-              Get Directions ↗
-            </a>
+            <div className="location-card-actions">
+              <a href="https://maps.google.com/?q=MindMentorz+Kothanur" target="_blank" rel="noopener noreferrer" className="btn-direction kothanur-btn">
+                Get Directions ↗
+              </a>
+              <Link to="/locations/kothanur" className="btn-view-center kothanur-view">
+                View Full Center <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+              </Link>
+            </div>
           </div>
 
           {/* Vidyaranyapura Center */}
@@ -77,9 +83,14 @@ export default function Locations() {
               </div>
             </div>
 
-            <a href="https://maps.google.com/?q=MindMentorz+Vidyaranyapura" target="_blank" rel="noopener noreferrer" className="btn-direction vidya-btn">
-              Get Directions ↗
-            </a>
+            <div className="location-card-actions">
+              <a href="https://maps.google.com/?q=MindMentorz+Vidyaranyapura" target="_blank" rel="noopener noreferrer" className="btn-direction vidya-btn">
+                Get Directions ↗
+              </a>
+              <Link to="/locations/vidyaranyapura" className="btn-view-center vidya-view">
+                View Full Center <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+              </Link>
+            </div>
           </div>
 
           {/* Wakad Pune Center */}
@@ -107,9 +118,14 @@ export default function Locations() {
               </div>
             </div>
 
-            <a href="https://maps.app.goo.gl/db2Zp8sX7a9yJiGA8" target="_blank" rel="noopener noreferrer" className="btn-direction pune-btn">
-              Get Directions ↗
-            </a>
+            <div className="location-card-actions">
+              <a href="https://maps.app.goo.gl/db2Zp8sX7a9yJiGA8" target="_blank" rel="noopener noreferrer" className="btn-direction pune-btn">
+                Get Directions ↗
+              </a>
+              <Link to="/locations/wakad-pune" className="btn-view-center pune-view">
+                View Full Center <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

@@ -80,3 +80,57 @@
   .locations-grid { grid-template-columns: 1fr; }
   .locations-hero .section-title { font-size: 2.2rem; }
 }
+
+/* ── Location Card Actions (buttons row) ── */
+.location-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.btn-view-center {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  text-align: center; text-decoration: none;
+  padding: 12px;
+  border-radius: 100px;
+  font-weight: 800; font-size: 0.9rem;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+/* Kothanur — purple fill */
+.btn-view-center.kothanur-view {
+  background: var(--primary);
+  color: #FFF;
+  box-shadow: 0 4px 14px rgba(100,43,143,0.25);
+}
+.btn-view-center.kothanur-view:hover {
+  background: #4B1A6E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(100,43,143,0.35);
+}
+
+/* Vidyaranyapura — gold fill */
+.btn-view-center.vidya-view {
+  background: #F8A213;
+  color: #FFF;
+  box-shadow: 0 4px 14px rgba(248,162,19,0.3);
+}
+.btn-view-center.vidya-view:hover {
+  background: #E88300;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(248,162,19,0.4);
+}
+
+/* Wakad Pune — teal fill */
+.btn-view-center.pune-view {
+  background: #0D9488;
+  color: #FFF;
+  box-shadow: 0 4px 14px rgba(13,148,136,0.25);
+}
+.btn-view-center.pune-view:hover {
+  background: #0F766E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(13,148,136,0.35);
+}
