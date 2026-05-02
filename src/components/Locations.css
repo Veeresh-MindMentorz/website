@@ -5,7 +5,7 @@
 
 .locations-hero {
   background: linear-gradient(135deg, #642B8F 0%, #4B1A6E 100%);
-  padding: 120px 20px 80px;
+  padding: 120px 24px 80px;
   color: #FFFFFF;
   margin-bottom: -40px;
 }
@@ -25,7 +25,7 @@
 .location-card {
   background: #FFFFFF;
   border-radius: 16px;
-  padding: 40px;
+  padding: 32px 28px;
   box-shadow: 0 12px 32px rgba(100,43,143,0.08);
   border-top: 4px solid;
   display: flex;
@@ -77,8 +77,33 @@
   .locations-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .locations-grid { grid-template-columns: 1fr; }
+  .locations-hero { padding: 100px 20px 60px; }
+  .locations-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
   .locations-hero .section-title { font-size: 2.2rem; }
+  .locations-subtitle { font-size: 1rem; }
+  .location-card { padding: 24px 20px; }
+  .location-title { font-size: 1.2rem; }
+}
+@media (max-width: 480px) {
+  .locations-hero { padding: 90px 16px 56px; }
+  .locations-hero .section-title { font-size: 1.9rem; }
+  .locations-subtitle { font-size: 0.95rem; }
+  .locations-grid { max-width: 100%; }
+  .location-card { padding: 20px 16px; border-radius: 12px; }
+  .location-title { font-size: 1.15rem; }
+  .detail-row p { font-size: 0.84rem; }
+  .detail-row strong { font-size: 0.85rem; }
+  .btn-direction, .btn-view-center { padding: 11px 12px; font-size: 0.87rem; }
+  .location-card-header { gap: 10px; margin-bottom: 24px; }
+  .location-details { gap: 18px; margin-bottom: 24px; }
+}
+@media (max-width: 360px) {
+  .locations-hero .section-title { font-size: 1.65rem; }
+  .location-card { padding: 18px 14px; }
 }
 
 /* ── Location Card Actions (buttons row) ── */
