@@ -79,6 +79,17 @@ function CenterLayout({ children }) {
 }
 
 function App() {
+  const pathname = window.location.pathname.toLowerCase()
+
+  if (pathname === '/landingpage' || pathname.startsWith('/landingpage/')) {
+    return (
+      <>
+        <LandingPage />
+        <FloatingTrialButton />
+      </>
+    )
+  }
+
   return (
     <Router>
       <ScrollToTop />
