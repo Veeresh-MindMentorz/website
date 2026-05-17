@@ -94,6 +94,7 @@ function App() {
         <Route path="/privacy-policy" element={<LegalPage><PrivacyPolicy /></LegalPage>} />
         <Route path="/terms-of-service" element={<LegalPage><TermsOfService /></LegalPage>} />
         <Route path="/refund-policy" element={<LegalPage><RefundPolicy /></LegalPage>} />
+        <Route path="*" element={<LandingPage />} />
       </Routes>
       <FloatingTrialButton />
     </Router>
