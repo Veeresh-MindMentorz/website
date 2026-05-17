@@ -61,6 +61,27 @@ function AppContent() {
   )
 }
 
+function LandingPageContent() {
+  return (
+    <div className="app">
+      <main>
+        <Hero />
+        <Stats />
+        <WhyUs />
+        <Coaches />
+        <Gallery />
+        <Results />
+        <Program />
+        <Journey />
+        <Testimonials />
+        <FAQ />
+        <CTA />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
 function LegalPage({ children }) {
   return (
     <>
@@ -82,6 +103,7 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<AppContent />} />
+        <Route path="/landingpage" element={<LandingPageContent />} />
         <Route path="/pricing" element={<LegalPage><Pricing /></LegalPage>} />
         <Route path="/locations" element={<LegalPage><Locations /></LegalPage>} />
         <Route path="/locations/:slug" element={<CenterLayout><CenterPage /></CenterLayout>} />
